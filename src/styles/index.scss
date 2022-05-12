@@ -1,0 +1,120 @@
+@import "clean";
+@import "fonts";
+@import "components";
+@import "partials";
+
+// LIBS
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+*::-webkit-scrollbar {
+  width: 9px; /* ширина для вертикального скролла */
+  height: 9px; /* высота для горизонтального скролла */
+  background-color: #827261;
+}
+
+/* ползунок скроллбара */
+*::-webkit-scrollbar-thumb {
+  background-color: #CFF69B;
+  border-radius: 9em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-jc-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-jc-sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-ai-c {
+  display: flex;
+  align-items: center;
+}
+
+.h2-title {
+  font-family: 'Adigiana2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  color: #CFF69B;
+  -webkit-text-stroke: 0.5px #000;
+}
+.t-adigiana {
+  font-family: 'Adigiana2' !important;
+  font-size: 24px;
+}
+
+
+@media (max-width: 1450px) {
+  .container {
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    max-width: 1124px;
+  }
+}
+
+@media (max-width: 1170px) {
+  .container {
+    max-width: 991px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 950px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 870px) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 780px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (max-width: 735px) {
+  .container {
+    max-width: 610px;
+  }
+}
+
+@media (max-width: 637px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .h2-title {
+    font-size: 40px;
+  }
+}
