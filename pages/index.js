@@ -1,22 +1,33 @@
-import Header from '../src/components/Header/Header';
-import Button from "../src/components/Button/Button";
 import Banner from "../src/components/Banner/Banner";
 import Novelty from "../src/components/Novelty/Novelty";
 import Goals from "../src/components/Goals/Goals";
-import Footer from "../src/components/Footer/Footer";
 import HomeAbout from "../src/components/HomeAbout/HomeAbout";
+import MainLayout from "../src/components/layouts/MainLayout";
+import {getProducts} from "../src/redux/actions/products";
+import {wrapper} from "../src/redux/store";
+import {useSelector} from "react-redux";
+import Basket from "../src/components/modals/Basket";
 
-export default function Home() {
+
+const Home = () => {
+  const {products} = useSelector(store => store)
+
   return (
     <div className="home">
-      <Header/>
-      <section className="home__banner">
+      <MainLayout>
         <Banner/>
-      </section>
-      <Novelty/>
-      <Goals/>
-      <HomeAbout/>
-      <Footer/>
+        <Novelty/>
+        <Goals/>
+        <HomeAbout/>
+      </MainLayout>
+      <Basket/>
     </div>
   )
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(store => async () => {
+  await store.dispatch(getProducts());
+});
+
+
+export default Home

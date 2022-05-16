@@ -1,8 +1,16 @@
 import React from 'react';
 import SVG from 'react-inlinesvg'
 import Link from 'next/link'
+import {useDispatch} from "react-redux";
+import {openModal} from "../../redux/actions/modals";
 
 const Header = () => {
+  const dispatch = useDispatch()
+
+  const openModalhandle = () => {
+    dispatch(openModal())
+  }
+
   return (
     <div className="header">
       <div className="container">
@@ -21,10 +29,8 @@ const Header = () => {
               <span className="phone">098 462  51 82</span>
               <span className="phone">098 462  51 82</span>
             </div>
-            <div className="header__basket">
-              <Link href="/checkout">
-                <SVG src="./icons/basket.svg"/>
-              </Link>
+            <div className="header__basket" onClick={openModalhandle}>
+              <SVG src="./icons/basket.svg"/>
             </div>
           </div>
           <div className="header__mobile-title">Гризу хату</div>

@@ -1,0 +1,117 @@
+.basket-modal {
+  &__content {
+    .table {
+      .col-1 {
+        width: 40%;
+      }
+
+      .col-2 {
+        width: 20%;
+      }
+
+      .col-3 {
+        width: 20%;
+      }
+
+      .col-4 {
+        width: 20%;
+      }
+
+      &-header {
+        background: #9D8B77;
+        padding: 10px 30px;
+
+        .title {
+          font-family: 'Montserrat', sans-serif;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          color: #CFF69B;
+
+          &:nth-child(3) {
+            position: relative;
+            left: 10px;
+          }
+        }
+      }
+
+      &-content {
+        .product {
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          position: relative;
+          border-bottom: 1px solid #DEDEDE; ;
+
+          .title-wrapper {
+            margin-left: 10px;
+          }
+
+          &__title {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 5px;
+
+
+          }
+
+          &__subtitle {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.5);
+          }
+
+          &__price {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000000;
+          }
+
+          &__count {
+            height: 100%;
+            display: flex;
+            align-items: center;
+          }
+
+          &__sum {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            color: #000000;
+          }
+
+          &__delete {
+            position: absolute;
+            right: 20px;
+            top: 42px;
+            cursor: pointer;
+
+            svg {
+              path {
+                fill: rgba(0,0,0, 0.4)
+              }
+            }
+          }
+        }
+      }
+
+      &-footer {
+        padding: 20px;
+      }
+    }
+  }
+}

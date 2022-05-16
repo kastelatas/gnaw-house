@@ -1,0 +1,35 @@
+.counter {
+  max-width: 103px;
+  &__content {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    max-width: 114px;
+    padding: 6px 10px;
+  }
+
+  &__minus,
+  &__num,
+  &__plus {
+    font-family: 'Montserrat';
+    font-style: normal;
+
+    font-size: 22px;
+    color: #000000;
+    user-select: none;
+  }
+
+  &__minus,
+  &__plus {
+    cursor: pointer;
+    font-size: 24px;
+
+  }
+
+  &__num {
+    margin: 0 20px;
+    font-weight: 700;
+  }
+
+}

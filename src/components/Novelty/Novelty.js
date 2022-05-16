@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import Link from "next/link";
 import Slider from "react-slick";
 import Button from "../Button/Button";
-import * as url from "url";
+import Loader from "../Loader/Loader";
+import {wrapper} from "../../redux/store";
+import {getProducts} from "../../redux/actions/products";
+import types from "../../redux/types";
 
-const Novelty = () => {
+const Novelty = (props) => {
+  const {products} = useSelector(store => store.products)
 
   const settings = {
     dots: false,
@@ -12,8 +18,8 @@ const Novelty = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrow: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow/>,
+    prevArrow: <SamplePrevArrow/>,
     responsive: [
       {
         breakpoint: 1350,
@@ -39,50 +45,27 @@ const Novelty = () => {
     ]
   };
 
-  const sliderItem = [
-    {
-      id: 1,
-      imgPath: "./img/slider-item.png",
-      title: "Elf Pup Christmas Dog Costume1"
-    },
-    {
-      id: 2,
-      imgPath: "./img/slider-item.png",
-      title: "Elf Pup Christmas Dog Costume2"
-    },
-    {
-      id: 3,
-      imgPath: "./img/slider-item.png",
-      title: "Elf Pup Christmas Dog Costume3"
-    },
-    {
-      id: 4,
-      imgPath: "./img/slider-item.png",
-      title: "Elf Pup Christmas Dog Costume4"
-    },
-    {
-      id: 5,
-      imgPath: "./img/slider-item.png",
-      title: "Elf Pup Christmas Dog Costume5"
-    },
-  ]
-
-
   return (
     <div className="novelty">
       <div className="container">
         <h2 className="novelty__title h2-title">Новинки</h2>
         <Slider {...settings} className="novelty-slider">
           {
-            sliderItem.map((item, i) => {
-              return (
-                <div className="novelty-slider__item" key={i}>
-                  <img src={item.imgPath} alt="" className="image"/>
-                  <p className="title">{item.title}</p>
-                  <Button name="Детальніше >" btnClass="btn__novelty"/>
-                </div>
-              )
-            })
+            products.length
+              ? products.map((item, i) => {
+                return (
+                  <div className="novelty-slider__item" key={i}>
+                    <img src={item.imgPath} alt="" className="image"/>
+                    <p className="title">{item.title}</p>
+                    <Link href={`/product/${item.id}`} passHref>
+                      <a>
+                        <Button name="Детальніше >" btnClass="btn__novelty"/>
+                      </a>
+                    </Link>
+                  </div>
+                )
+              })
+              : <Loader/>
           }
         </Slider>
       </div>
@@ -92,24 +75,26 @@ const Novelty = () => {
 
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const {className, style, onClick} = props;
   return (
     <div
       className={className}
-      style={{ ...style}}
+      style={{...style}}
       onClick={onClick}
     />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const {className, style, onClick} = props;
   return (
     <div
       className={className}
-      style={{ ...style}}
+      style={{...style}}
       onClick={onClick}
     />
   );
 }
+
+
 export default Novelty;
