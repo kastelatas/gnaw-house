@@ -9,12 +9,12 @@ const HomeAbout = () => {
         <div className="row">
           <div className="home-about__content">
             <div className="home-about__block">
-              <Image src="./img/anna.png" alt=""/>
+              <img src="./img/anna.png" alt=""/>
               <p className="title">Ганна Мулик</p>
               <p className="descr">Справжня фея тканин та фурнітури. Мама двох крис, двох котів та дегунихи.</p>
             </div>
             <div className="home-about__block">
-              <Image src="./img/lisa.png" alt=""/>
+              <img src="./img/lisa.png" alt=""/>
               <p className="title">Ліза Лагода</p>
               <p className="descr">Вічний генератор ідей. Мама двох крис та чотирьох котів.</p>
             </div>

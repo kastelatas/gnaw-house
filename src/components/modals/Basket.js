@@ -24,7 +24,7 @@ const Basket = () => {
                 <div className="col-1">
                   <div className="row">
                     <div className="product__img">
-                      <Image src="./img/product-img-basket.jpg" alt=""/>
+                      <img src="./img/product-img-basket.jpg" alt=""/>
                     </div>
                     <div className="title-wrapper">
                       <div className="product__title">Квадрат `Хмаринки`</div>

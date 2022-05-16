@@ -53,7 +53,7 @@ const Novelty = () => {
               ? products.map((item, i) => {
                 return (
                   <div className="novelty-slider__item" key={i}>
-                    <Image src={item.imgPath} alt="" className="image"/>
+                    <img src={item.imgPath} alt="" className="image"/>
                     <p className="title">{item.title}</p>
                     <Link href={`/product/${item.id}`} passHref>
                       <a>
