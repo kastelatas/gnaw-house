@@ -1,14 +1,12 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
+import { useSelector} from "react-redux";
 import Link from "next/link";
 import Slider from "react-slick";
 import Button from "../Button/Button";
 import Loader from "../Loader/Loader";
-import {wrapper} from "../../redux/store";
-import {getProducts} from "../../redux/actions/products";
-import types from "../../redux/types";
+import Image from "next/image";
 
-const Novelty = (props) => {
+const Novelty = () => {
   const {products} = useSelector(store => store.products)
 
   const settings = {
@@ -55,7 +53,7 @@ const Novelty = (props) => {
               ? products.map((item, i) => {
                 return (
                   <div className="novelty-slider__item" key={i}>
-                    <img src={item.imgPath} alt="" className="image"/>
+                    <Image src={item.imgPath} alt="" className="image"/>
                     <p className="title">{item.title}</p>
                     <Link href={`/product/${item.id}`} passHref>
                       <a>

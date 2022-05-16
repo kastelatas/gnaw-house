@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "../Button/Button";
+import Image from "next/image";
 
 const Banner = () => {
   return (
@@ -11,8 +12,8 @@ const Banner = () => {
           <Button name={'Детальніше >'}/>
         </div>
         <div className="right-side">
-          <img src="./img/home_top_img.svg" alt="" className="banner__image"/>
-          <img src="./img/home_top_img-mob.svg" alt="" className="banner__image-mob"/>
+          <Image src="./img/home_top_img.svg" alt="" className="banner__image"/>
+          <Image src="./img/home_top_img-mob.svg" alt="" className="banner__image-mob"/>
         </div>
       </div>
     </div>
