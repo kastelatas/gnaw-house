@@ -1,11 +1,11 @@
 {
     "theme_color": "#CFF69B",
-    "background_color": "#5f5c5b",
-    "display": "standalone",
+    "background_color": "#ffffff",
+    "display": "minimal-ui",
     "scope": "/",
     "start_url": "/",
-    "name": "Fancy Pets Costume Store",
-    "short_name": "Fancy Pets ",
+    "name": " ",
+    "short_name": "Fancy Pets",
     "description": "Costume Store",
     "icons": [
         {
