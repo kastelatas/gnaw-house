@@ -10,7 +10,6 @@ const nextConfig = withPWA({
     register: true,
     skipWaiting: true,
     disable: !isProduction,
-    runtimeCaching
   },
 })
 
