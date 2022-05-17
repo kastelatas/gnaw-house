@@ -11,3 +11,7 @@ const nextConfig = withPWA({
 })
 
 module.exports = nextConfig
+
+module.exports = {
+  optimizeFonts: false,
+}
