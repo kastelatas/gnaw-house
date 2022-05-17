@@ -19,6 +19,17 @@
   border-radius: 9em;
 }
 
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+#__next{
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   width: 100%;
   max-width: 1400px;

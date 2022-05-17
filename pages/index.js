@@ -13,15 +13,14 @@ const Home = () => {
   const {products} = useSelector(store => store)
 
   return (
-    <div className="home">
-      <MainLayout>
+    <MainLayout title="Головна">
+      <div className="home">
         <Banner/>
         <Novelty/>
         <Goals/>
         <HomeAbout/>
-      </MainLayout>
-      <Basket/>
-    </div>
+      </div>
+    </MainLayout>
   )
 }
 

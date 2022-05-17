@@ -7,7 +7,7 @@ import {openModal} from "../../redux/actions/modals";
 const Header = () => {
   const dispatch = useDispatch()
 
-  const openModalhandle = () => {
+  const openModalHandle = () => {
     dispatch(openModal())
   }
 
@@ -15,7 +15,7 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <div className="row flex-ai-c flex-jc-sb">
-          <SVG src="./img/logo.svg" className="logo"/>
+          <SVG src="/img/logo.svg" className="logo"/>
           <div className="nav">
             <ul className="menu">
               <li className="menu__item"><Link href="/">Головна</Link></li>
@@ -29,13 +29,13 @@ const Header = () => {
               <span className="phone">098 462  51 82</span>
               <span className="phone">098 462  51 82</span>
             </div>
-            <div className="header__basket" onClick={openModalhandle}>
-              <SVG src="./icons/basket.svg"/>
+            <div className="header__basket" onClick={openModalHandle}>
+              <SVG src="/icons/basket.svg"/>
             </div>
           </div>
           <div className="header__mobile-title">Гризу хату</div>
           <div className="header__mobile-menu">
-            <SVG src="./icons/burger-menu.svg"/>
+            <SVG src="/icons/burger-menu.svg"/>
           </div>
         </div>
       </div>
