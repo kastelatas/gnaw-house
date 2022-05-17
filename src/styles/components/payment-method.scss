@@ -1,0 +1,41 @@
+.payment-method {
+  width: 350px;
+  height: 100px;
+  background: #F7F6F0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+
+  &:hover {
+    background: #9D8B77;
+
+    .payment-method__text {
+      color: #ffffff;
+    }
+
+    svg, path {
+      fill: #CFF69B
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: #9D8B77;
+    margin-left: 10px;
+
+  }
+}

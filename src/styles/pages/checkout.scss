@@ -1,0 +1,108 @@
+.checkout {
+  margin-bottom: 60px;
+  &__form {
+    &-title {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      color: #9D8B77;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      width: 97%;
+      background: #9D8B77;
+      border-radius: 10px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 25px;
+      color: #CFF69B;
+      margin-top: 50px;
+    }
+  }
+
+  &__basket {
+    min-width: 477px;
+
+    &-container {
+      border-left: 2px solid #827261;
+      padding-left: 20px;
+    }
+    &-item-list {
+      max-height: 700px;
+      margin-right: auto;
+      overflow-y: scroll;
+    }
+
+    &-item {
+      max-width: 427px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      background: #F7F6F0;
+      border-radius: 10px;
+      position: relative;
+
+      &__title {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        color: #9D8B77;
+        margin-bottom: 14px;
+      }
+
+      &__count {
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        color: #827261;
+      }
+
+      .counter {
+        &__content {
+          border: none;
+          padding: 0;
+        }
+        &__minus,
+        &__plus,
+        &__num{
+          font-size: 16px;
+        }
+      }
+
+      .delete-icon {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+    }
+
+    &-img {
+      width: 70px;
+      margin-right: 20px;
+    }
+  }
+  &__basket-all-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-right: 15px;
+
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      color: #827261;
+
+    }
+  }
+}

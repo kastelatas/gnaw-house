@@ -10,6 +10,7 @@ const nextConfig = withPWA({
     register: true,
     skipWaiting: true,
     disable: !isProduction,
+    buildExcludes: [/middleware-manifest.json$/]
   },
 })
 

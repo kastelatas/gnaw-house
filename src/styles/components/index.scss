@@ -15,9 +15,12 @@
 @import "./product";
 @import "./product-list";
 @import "./productSlider";
+@import "./payment-method";
 
-@import "./ui/input.scss";
-@import "./ui/checkbox.scss";
-@import "./ui/radioButton.scss";
+@import "./ui/input";
+@import "./ui/checkbox";
+@import "./ui/radioButton";
+@import "./ui/form-input";
+@import "./ui/form-textarea";
 
 @import "modals";

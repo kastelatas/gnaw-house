@@ -9,7 +9,7 @@ const Banner = () => {
           <h1 className="banner__title">Топові домівки для гризунів</h1>
           <p className="banner__text">Гамаки, вігвами та квадрати - усе в декількох розмірах </p>
           <Link href="/catalog">
-            <a className="btn">Детальніше  `&gt;`</a>
+            <a className="btn">Детальніше &gt;</a>
           </Link>
         </div>
         <div className="right-side">

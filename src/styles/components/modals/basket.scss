@@ -1,6 +1,14 @@
 .basket-modal {
+  height: 100%;
+
   &__content {
+    height: calc(100% - 67px);
+
     .table {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+
       .col-1 {
         width: 40%;
       }
@@ -36,12 +44,14 @@
       }
 
       &-content {
+        min-height: 370px;
+
         .basket-product {
           width: 100%;
           padding: 20px;
           display: flex;
           position: relative;
-          border-bottom: 1px solid #DEDEDE; ;
+          border-bottom: 1px solid #DEDEDE;
 
           .title-wrapper {
             margin-left: 10px;
@@ -102,7 +112,7 @@
 
             svg {
               path {
-                fill: rgba(0,0,0, 0.4)
+                fill: rgba(0, 0, 0, 0.4)
               }
             }
           }
@@ -110,7 +120,54 @@
       }
 
       &-footer {
+        height: 100%;
         padding: 20px;
+        flex: 0 0 auto;
+
+
+        .back-to-products {
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 0.5);
+          cursor: pointer;
+        }
+
+        .products-sum {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+
+          &-title {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000000;
+          }
+
+          &-count {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 22px;
+            color: #000000;
+
+          }
+        }
+
+        .btn {
+          background: #9D8B77;
+          border-radius: 10px;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 20px;
+          color: #CFF69B;
+          margin-top: 8px;
+        }
       }
     }
   }

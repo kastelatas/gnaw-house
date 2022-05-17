@@ -1,10 +1,14 @@
 import React from 'react';
+import Link from "next/link";
+import SVG from "react-inlinesvg";
+import {useDispatch} from "react-redux";
 import Modal from "./Modal";
 import Counter from "../Counter/Counter";
-import SVG from "react-inlinesvg";
-import {Button} from "../Button/Button";
+import {closeModal} from "../../redux/actions/modals";
 
 const Basket = () => {
+  const dispatch = useDispatch();
+
   return (
     <Modal title={'Товари у кошику'}>
       <div className="basket-modal">
@@ -48,8 +52,11 @@ const Basket = () => {
               </div>
             </div>
             <div className="table-footer">
-              <div className="row flex-jc-sb">
-                <div className="back-to-products">
+              <div className="row flex-jc-sb flex-ai-c">
+                <div
+                  className="back-to-products"
+                  onClick={() => dispatch(closeModal())}
+                >
                   Повернутись до покупок
                 </div>
                 <div className="checkout-block">
@@ -57,7 +64,11 @@ const Basket = () => {
                     <p className="products-sum-title">Сумма замовлення</p>
                     <p className="products-sum-count">670 грн</p>
                   </div>
-                  <Button name="Оформити замовлення" btnClass=""/>
+                  <div onClick={() => dispatch(closeModal())}>
+                    <Link href="/checkout">
+                      <a className="btn">Оформити замовлення</a>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
