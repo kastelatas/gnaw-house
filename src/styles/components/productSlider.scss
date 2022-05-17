@@ -1,0 +1,23 @@
+.product-slider {
+  .carousel {
+    .thumb {
+      cursor: pointer;
+      border:none;
+      transition: all .4s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .thumbs-wrapper {
+      margin-left: 0;
+    }
+
+    .thumb.selected,
+    .thumb:hover,
+    .thumb:focus-visible{
+      border:none
+    }
+  }
+}

@@ -1,0 +1,159 @@
+.product-page {
+  &__slider {
+    min-width: 683px;
+    max-width: 683px;
+  }
+
+  &__info {
+    margin-left: 45px;
+  }
+
+  .title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    color: #827261;
+    margin-bottom: 10px;
+  }
+
+  .descr {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #827261;
+    max-width: 490px;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &__size {
+    margin-top: 35px;
+
+    .ui-radioButton {
+      margin-right: 15px;
+    }
+  }
+
+  &__color {
+    margin-top: 5px;
+  }
+
+  &__price {
+    margin-top: 5px;
+
+    .old-price {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      text-decoration-line: line-through;
+      color: rgba(130, 114, 97, 0.6);
+    }
+
+    .new-price {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 35px;
+      color: #F84147;
+
+    }
+  }
+
+  &__count {
+    margin-top: 20px;
+    .title {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+
+    .counter {
+      margin-right: 20px;
+    }
+
+    .btnIcon {
+      svg, path {
+        width: 32px;
+        fill: #fff
+      }
+      color:#fff;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &__payment {
+    width: 100%;
+    max-width: 617px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+
+  &__delivery {
+    width: 100%;
+    max-width: 617px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+  .also-buy {
+    margin-bottom: 60px;
+    &-slider {
+      max-width: 1300px;
+      margin: 0 auto;
+      margin-top: 40px;
+      overflow: hidden;
+
+      &__item {
+        max-width: 422px;
+        padding: 20px;
+        background: #F7F6F0;
+        border-radius: 10px;
+        display: flex !important;
+        flex-direction: row;
+
+        img {
+          width: 128px;
+          margin-right: 20px;
+        }
+
+        .title {
+          font-size: 16px;
+        }
+
+        .descr {
+          font-size: 14px;
+          line-height: 17px;
+        }
+
+        .price-block {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+
+          .price {
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #9D8B77;
+            margin-right: 25px;
+          }
+
+          .btnIcon {
+            height: 37px;
+            padding: 7px;
+            svg, path {
+              width: 24px;
+              fill: #CFF69B;
+            }
+          }
+        }
+      }
+    }
+  }
+}

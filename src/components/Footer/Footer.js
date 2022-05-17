@@ -33,8 +33,8 @@ const Footer = () => {
               <Button name="Підписатись"/>
             </div>
             <div className="follow-block">
-              <Link href="/"><SVG src="./icons/insta.svg"/></Link>
-              <Link href="/"><SVG src="./icons/fb.svg"/></Link>
+              <Link href="/"><SVG src="/icons/insta.svg"/></Link>
+              <Link href="/"><SVG src="/icons/fb.svg"/></Link>
             </div>
           </div>
         </div>

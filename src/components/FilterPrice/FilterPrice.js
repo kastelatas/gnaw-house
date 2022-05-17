@@ -5,9 +5,10 @@ import MultiRangeSlider from "../MultiRangeSlider/MultiRangeSlider";
 
 const FilterPrice = () => {
   const [minValue, setMinValue] = useState(0)
-  const [maxValue, setMaxValue] = useState(0)
+  const [maxValue, setMaxValue] = useState(1000)
 
   const multiRangeSliderChange = (min, max) => {
+    console.log('multiRangeSliderChange max=', max)
     setMinValue(min)
     setMaxValue(max)
   }
@@ -15,7 +16,7 @@ const FilterPrice = () => {
     <div className="filter-price">
       <div className="filter-price__wrapper">
         <Input value={minValue}/>
-        <div className="filter-price__dash"></div>
+        <div className="filter-price__dash"/>
         <Input value={maxValue}/>
         <Button name="OK"/>
       </div>

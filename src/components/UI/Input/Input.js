@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Input = ({placeholder, value = ''}) => {
+const Input = ({placeholder, value}) => {
+  const [inputVal, setInputVal] = useState()
+
+  useEffect(() => {
+    setInputVal(value)
+  }, [value])
+
   return (
-    <input type="text" placeholder={placeholder} defaultValue={value} className="ui-input"/>
+    <input type="text" placeholder={placeholder} defaultValue={inputVal} className="ui-input"/>
   );
 };
 
