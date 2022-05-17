@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Input = ({placeholder}) => {
+const Input = ({placeholder, value = ''}) => {
   return (
-    <input type="text" placeholder={placeholder} className="ui-input"/>
+    <input type="text" placeholder={placeholder} defaultValue={value} className="ui-input"/>
   );
 };
 

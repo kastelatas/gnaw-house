@@ -2,8 +2,7 @@ import React from 'react';
 import Modal from "./Modal";
 import Counter from "../Counter/Counter";
 import SVG from "react-inlinesvg";
-import Button from "../Button/Button";
-import Image from "next/image";
+import {Button} from "../Button/Button";
 
 const Basket = () => {
   return (
@@ -20,26 +19,26 @@ const Basket = () => {
               </div>
             </div>
             <div className="table-content">
-              <div className="product">
+              <div className="basket-product">
                 <div className="col-1">
                   <div className="row">
-                    <div className="product__img">
+                    <div className="basket-product__img">
                       <img src="./img/product-img-basket.jpg" alt=""/>
                     </div>
                     <div className="title-wrapper">
-                      <div className="product__title">Квадрат `Хмаринки`</div>
-                      <div className="product__subtitle">Блакитний</div>
+                      <div className="basket-product__title">Квадрат `Хмаринки`</div>
+                      <div className="basket-product__subtitle">Блакитний</div>
                     </div>
                   </div>
                 </div>
                 <div className="col-2">
-                  <div className="product__price">235 грн</div>
+                  <div className="basket-product__price">235 грн</div>
                 </div>
                 <div className="col-3">
-                  <div className="product__count"><Counter/></div>
+                  <div className="basket-product__count"><Counter/></div>
                 </div>
                 <div className="col-4">
-                  <div className="product__sum">235 грн</div>
+                  <div className="basket-product__sum">235 грн</div>
                 </div>
                 <div className="col-5">
                   <div className="product__delete">

@@ -1,0 +1,26 @@
+.catalog {
+  margin-top: 30px;
+  margin-bottom: 60px;
+
+  &__wrapper {
+    margin-left: 40px;
+  }
+
+  &__filter-btn {
+    display: none;
+  }
+}
+
+
+
+@media (max-width: 1025px) {
+  .catalog {
+    &__wrapper {
+      margin-left: 0;
+    }
+    &__filter-btn {
+      display: flex;
+      margin-right: 20px;
+    }
+  }
+}

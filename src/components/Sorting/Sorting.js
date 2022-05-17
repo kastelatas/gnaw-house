@@ -1,9 +1,10 @@
 import React from 'react';
+import Select from "../Select/Select";
 
 const Sorting = () => {
   return (
     <div className="sorting">
-      sorting
+     <Select/>
     </div>
   );
 };

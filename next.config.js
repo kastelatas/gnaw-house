@@ -1,4 +1,7 @@
 const withPWA = require("next-pwa");
+const runtimeCaching = require('next-pwa/cache');
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 const nextConfig = withPWA({
   reactStrictMode: false,
@@ -6,7 +9,8 @@ const nextConfig = withPWA({
     dest: "public",
     register: true,
     skipWaiting: true,
-    disable: process.env.NODE_ENV === "development",
+    disable: !isProduction,
+    runtimeCaching
   },
 })
 

@@ -16,6 +16,7 @@ const Filter = ({filter}) => {
             )
           })
         }
+
       </div>
     </div>
   );

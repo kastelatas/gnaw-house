@@ -2,8 +2,7 @@ import React from 'react';
 import {useSelector} from "react-redux";
 import Product from "../Product/Product";
 
-const ProductList = () => {
-  const {products} = useSelector(state => state.products)
+const ProductList = ({products}) => {
 
   return (
     <div className="product-list">

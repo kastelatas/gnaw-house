@@ -1,0 +1,71 @@
+.select {
+  position: relative;
+  &__wrapper {
+    width: 176px;
+  }
+
+  &__container {
+
+  }
+
+  button {
+    border-radius: 4px;
+    border:1px solid #827261;
+    background: #fff;
+    width: 100%;
+    padding: 6px 8px;
+    position: relative;
+    text-align: left;
+    font-family: 'Montserrat';
+    font-size: 15px;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  button::after {
+    position: absolute;
+    right: 6px;
+    top: 4px;
+    content: "\2191";
+  }
+
+  button.expanded::after {
+    content: "\2193";
+  }
+
+  .options {
+    position: absolute;
+    border: 1px solid #827261;
+    border-top: none;
+    display: none;
+    list-style: none;
+    padding: 4px 0;
+    margin-top: -2px;
+    z-index: 1;
+    background: #ffffff;
+    font-family: 'Montserrat';
+  }
+
+  ul.show {
+    display: block;
+    width: 176px;
+  }
+
+  ul.options li {
+    padding: 6px 10px;
+    font-family: 'Montserrat';
+    font-size: 15px;
+
+  }
+
+  ul.options li:active,
+  ul.options li:focus,
+  ul.options li:hover,
+  ul.options li[aria-selected="true"] {
+    background: #CFF69B;
+    cursor: pointer;
+  }
+
+}

@@ -15,7 +15,9 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <div className="row flex-ai-c flex-jc-sb">
-          <SVG src="/img/logo.svg" className="logo"/>
+          <Link href="/">
+            <img src="/img/logo.svg" className="logo"/>
+          </Link>
           <div className="nav">
             <ul className="menu">
               <li className="menu__item"><Link href="/">Головна</Link></li>

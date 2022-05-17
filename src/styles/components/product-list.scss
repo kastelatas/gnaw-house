@@ -1,0 +1,12 @@
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+@media (max-width: 1360px) {
+  .product-list {
+    justify-content: left;
+  }
+}

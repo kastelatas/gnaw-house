@@ -2,9 +2,8 @@ import React from 'react';
 import { useSelector} from "react-redux";
 import Link from "next/link";
 import Slider from "react-slick";
-import Button from "../Button/Button";
+import {Button} from "../Button/Button";
 import Loader from "../Loader/Loader";
-import Image from "next/image";
 
 const Novelty = () => {
   const {products} = useSelector(store => store.products)

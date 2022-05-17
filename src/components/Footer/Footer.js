@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from "next/link";
 import Input from "../UI/Input/Input";
-import Button from "../Button/Button";
+import {Button} from "../Button/Button";
 import SVG from "react-inlinesvg";
 
 const Footer = () => {

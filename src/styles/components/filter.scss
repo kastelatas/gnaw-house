@@ -1,0 +1,27 @@
+.filter {
+  min-width: 220px;
+  border: 1px solid #DEDEDE;
+  border-left: none;
+  padding-top: 13px;
+  padding-right: 13px;
+  padding-bottom: 13px;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 1px;
+  }
+
+  &__header {
+    padding-bottom: 13px;
+  }
+  &__name {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #827261;
+  }
+  &__content {
+
+  }
+}

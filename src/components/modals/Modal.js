@@ -12,7 +12,7 @@ function Modal({children, title}) {
   function afterOpenModal() {
   }
 
-  function closeModalhandle() {
+  function closeModalHandle() {
     dispatch(closeModal())
   }
 
@@ -20,14 +20,15 @@ function Modal({children, title}) {
     <ModalReact
       isOpen={modals.modalOpen}
       onAfterOpen={afterOpenModal}
-      onRequestClose={closeModalhandle}
+      onRequestClose={closeModalHandle}
+      ariaHideApp={false}
       className="Modal"
       overlayClassName="Overlay"
       contentLabel="Modal"
     >
       <div className="modal-header">
         <div className="title"> {title}</div>
-        <div className="exit" onClick={closeModalhandle}>
+        <div className="exit" onClick={closeModalHandle}>
         <SVG src={'/icons/close-modal.svg'}/>
         </div>
       </div>
