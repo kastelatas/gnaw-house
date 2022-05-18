@@ -1,10 +1,10 @@
 import React from 'react';
 import Select from "../Select/Select";
 
-const Sorting = () => {
+const Sorting = ({sortByPrice}) => {
   return (
     <div className="sorting">
-     <Select/>
+     <Select sortByPrice={sortByPrice}/>
     </div>
   );
 };

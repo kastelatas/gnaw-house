@@ -45,6 +45,8 @@
 
       &-content {
         min-height: 370px;
+        max-height: 500px;
+        overflow-y: scroll;
 
         .basket-product {
           width: 100%;
@@ -64,8 +66,6 @@
             font-size: 16px;
             color: #000000;
             margin-bottom: 5px;
-
-
           }
 
           &__subtitle {

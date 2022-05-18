@@ -4,16 +4,18 @@ const optionsList = [
   {
     id: 1,
     name: "Спочатку дорожче",
-    value: "expensive"
+    value: "expensive",
+    sort: 'asc'
   },
   {
     id: 2,
     name: "Спочатку дешевше",
-    value: "cheap"
+    value: "cheap",
+    sort: 'desc'
   }
 ];
 
-const Select = () => {
+const Select = ({sortByPrice}) => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(optionsList[0]);
 
@@ -22,6 +24,7 @@ const Select = () => {
   };
 
   const setSelectedThenCloseDropdown = (option) => {
+    sortByPrice(option.sort)
     setSelectedOption(option);
     setIsOptionsOpen(false);
   };

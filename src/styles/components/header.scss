@@ -62,6 +62,23 @@
   &__basket {
     margin-left: 20px;
     cursor: pointer;
+    position: relative;
+
+   &-counter {
+     width: 22px;
+     height: 22px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50%;
+     font-family: 'Montserrat';
+     background: #9D8B77;
+     color: #CFF69B;
+     position: absolute;
+     top: -5px;
+     left: 17px;
+
+   }
     svg {
       width: 29px;
     }

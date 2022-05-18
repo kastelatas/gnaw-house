@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Counter = () => {
-  const [num, setNum] = useState(1)
+const Counter = ({countHandler, count = 1}) => {
+  const [num, setNum] = useState(count)
 
   const minusNumber = () => {
-    if (num > 0) {
+    if (num > 1) {
       setNum(prevState => prevState - 1)
     }
   }
@@ -12,6 +12,10 @@ const Counter = () => {
   const plusNumber = () => {
     setNum(prevState => prevState + 1)
   }
+
+  useEffect(() => {
+    countHandler(num)
+  }, [num])
 
   return (
     <div className="counter">

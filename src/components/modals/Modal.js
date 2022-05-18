@@ -8,7 +8,6 @@ function Modal({children, title}) {
   const dispatch = useDispatch()
   const {modals} = useSelector(state => state)
 
-
   function afterOpenModal() {
   }
 

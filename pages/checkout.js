@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import MainLayout from "../src/components/layouts/MainLayout";
 import PaymentMethod from "../src/components/PaymentMethod/PaymentMethod";
 import FormInput from "../src/components/UI/FormInput/FormInput";
@@ -6,15 +6,52 @@ import FormTextArea from "../src/components/UI/FormTextArea/FormTextArea";
 import {Button} from "../src/components/Button/Button";
 import Counter from "../src/components/Counter/Counter";
 import SVG from "react-inlinesvg";
+import {useDispatch, useSelector} from "react-redux";
+import {decreaseQuantity, deleteFromCart, increaseQuantity} from "../src/redux/actions/cart";
+import {useRouter} from "next/router";
+import {wrapper} from "../src/redux/store";
+import {getProductByID, getProducts} from "../src/redux/actions/products";
 
-const basketArray = [1,1,1,1,1,1,1,1]
 
 const Checkout = () => {
-    return (
+  const router = useRouter();
+
+  const dispatch = useDispatch()
+  const {cart, price} = useSelector(state => state.cart)
+
+  const [count, setCount] = useState()
+
+  const countHandler = (count) => {
+    setCount(count)
+  }
+
+  const minusNumber = (indx) => {
+    dispatch(decreaseQuantity(indx))
+  }
+
+  const plusNumber = (indx) => {
+    dispatch(increaseQuantity(indx))
+  }
+
+  const deleteProduct = (indx) => {
+    dispatch(deleteFromCart(indx))
+  }
+
+  useEffect(() => {
+    if (!cart.length) {
+      router.push('/')
+    }
+  }, [cart])
+
+
+  return (
+    <>
+      {
+        cart.length &&
         <MainLayout title="Оплата">
-           <div className="checkout">
-             <div className="container">
-               <div className="row flex-jc-sb">
+          <div className="checkout">
+            <div className="container">
+              <div className="row flex-jc-sb">
                 <div className="checkout__form">
                   <p className="checkout__form-title">Оплата</p>
                   <div className="row">
@@ -45,18 +82,24 @@ const Checkout = () => {
                   <div className="checkout__basket-container">
                     <div className="checkout__basket-item-list">
                       {
-                        basketArray.map((item , index) => {
+                        cart.map((product, index) => {
                           return (
                             <div className="checkout__basket-item" key={index}>
-                              <img className="checkout__basket-img" src="/img/slider-item.png" />
+                              <img className="checkout__basket-img" src="/img/slider-item.png"/>
                               <div className="column">
                                 <p className="checkout__basket-item__title">Elf Pup Christmas Dog Costume</p>
                                 <div className="row flex-jc-sb">
-                                  <Counter/>
-                                  <p className="checkout__basket-item__count">900 грн</p>
+                                  <div className="counter">
+                                    <div className="counter__content">
+                                      <div className="counter__minus" onClick={() => minusNumber(index)}>-</div>
+                                      <div className="counter__num">{product.count}</div>
+                                      <div className="counter__plus" onClick={() => plusNumber(index)}>+</div>
+                                    </div>
+                                  </div>
+                                  <p className="checkout__basket-item__count">{product.price * product.count} грн</p>
                                 </div>
                               </div>
-                              <SVG className="delete-icon" src="/icons/delete-icon.svg"/>
+                              <SVG className="delete-icon" src="/icons/delete-icon.svg" onClick={() => deleteProduct(product.productId)}/>
                             </div>
                           )
                         })
@@ -64,15 +107,17 @@ const Checkout = () => {
                     </div>
                     <div className="checkout__basket-all-price">
                       <p>Всього до сплати:</p>
-                      <p>900грн</p>
+                      <p>{price}грн</p>
                     </div>
                   </div>
                 </div>
-               </div>
-             </div>
-           </div>
+              </div>
+            </div>
+          </div>
         </MainLayout>
-    );
+      }
+    </>
+  );
 };
 
 export default Checkout;

@@ -1,19 +1,34 @@
-import React from 'react';
-import MainLayout from "../../src/components/layouts/MainLayout";
+import React, {useEffect, useState} from 'react';
+import Link from "next/link";
+import { useRouter } from 'next/router'
+import Slider from "react-slick";
 import {wrapper} from "../../src/redux/store";
+import {useDispatch, useSelector} from "react-redux";
 import {getProductByID, getProducts} from "../../src/redux/actions/products";
-import {useSelector} from "react-redux";
+import {addToCart} from "../../src/redux/actions/cart";
+import MainLayout from "../../src/components/layouts/MainLayout";
 import ProductSlider from "../../src/components/ProductSlider/ProductSlider";
 import Loader from "../../src/components/Loader/Loader";
 import RadioButton from "../../src/components/UI/RadioButton/RadioButton";
 import Counter from "../../src/components/Counter/Counter";
-import {Button, ButtonWithIcon} from "../../src/components/Button/Button";
-import Novelty from "../../src/components/Novelty/Novelty";
-import Slider from "react-slick";
-import Link from "next/link";
+import {ButtonWithIcon} from "../../src/components/Button/Button";
 
 const Product = () => {
+  const sizePrice = {
+    'S(15x15x15)': 525,
+    'S(13x13x13)': 425,
+    'S(12x12x12)': 325,
+  }
+
+  const router = useRouter()
+
+  const dispatch = useDispatch();
   const {product, products} = useSelector(state => state.products)
+
+  const [count, setCount] = useState(1)
+  const [size, setSize] = useState(product.sizes[0].name)
+  const [color, setColor] = useState(product.colors[0].color)
+  const [productPrice, setProductPrice] = useState(0)
 
   const settings = {
     dots: false,
@@ -47,6 +62,39 @@ const Product = () => {
     ]
   }
 
+  const addToCartHandler = (product) => {
+    let productCopy = {
+      ...product,
+      count: count,
+      size: size,
+      color: color,
+      price: productPrice,
+      productId: Date.now()
+    }
+    dispatch(addToCart(productCopy))
+  }
+
+  const countHandler = (count) => {
+    setCount(count)
+  }
+
+  const sizeHandler = (size) => {
+    setSize(size)
+  }
+
+  const colorHandler = (color) => {
+    setColor(color)
+  }
+
+  useEffect(() => {
+    setProductPrice(sizePrice[size])
+  }, [size])
+
+  useEffect(() => {
+    console.log(1)
+    setCount(1)
+  }, [router])
+
   if (!Object.keys(product).length) {
     return <Loader/>
   }
@@ -67,30 +115,56 @@ const Product = () => {
               <div className="product-page__size">
                 <p className="title">Розміри:</p>
                 <div className="row">
-                  <RadioButton id="product-size" name="S(15x15x15)" labelName="S(15x15x15)"/>
-                  <RadioButton id="product-size" name="S(12x12x12)" labelName="S(12x12x12)"/>
-                  <RadioButton id="product-size" name="S(11x11x11)" labelName="S(11x11x11)"/>
+                  {
+                    product.sizes.map((size, indx) => {
+                      return (
+                        <RadioButton
+                          key={indx}
+                          id="product-size"
+                          name={size.name}
+                          labelName={size.name}
+                          checked={size.checked}
+                          clickHandler={sizeHandler}
+                        />
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className="product-page__color">
                 <p className="title">Колір:</p>
                 <div className="row">
-                  <RadioButton checked={true} id="product-color" name="Білий (чорний, блакитний)"
-                               labelName="Білий (чорний, блакитний)"/>
+                  {
+                    product.colors.map((color, indx) => {
+                      return (
+                        <RadioButton
+                          key={indx}
+                          id="product-color"
+                          name={color.color}
+                          checked={color.checked}
+                          labelName={color.color}
+                          clickHandler={colorHandler}
+                        />
+                      )
+                    })
+                  }
                 </div>
               </div>
               <div className="product-page__price">
                 <p className="title">Ціна:</p>
                 <div className="column">
-                  <p className="old-price">495 грн</p>
-                  <p className="new-price">395 грн</p>
+                  <p className="old-price">{productPrice + 100} грн</p>
+                  <p className="new-price">{productPrice} грн</p>
                 </div>
               </div>
               <div className="product-page__count">
                 <div className="row flex-ai-c">
                   <p className="title">Кількість:</p>
-                  <Counter/>
-                  <ButtonWithIcon name="Купити" icon="/icons/basket.svg"/>
+                  <Counter countHandler={countHandler} count={count}/>
+                  <ButtonWithIcon
+                    name="Купити"
+                    icon="/icons/basket.svg"
+                    onHandleClick={() => addToCartHandler(product)}/>
                 </div>
               </div>
             </div>
@@ -100,7 +174,8 @@ const Product = () => {
               <p className="title">Оплата:</p>
               <p className="descr">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and
                 scrambled it to make a type specimen book.
               </p>
             </div>
@@ -108,7 +183,8 @@ const Product = () => {
               <p className="title">Доставка:</p>
               <p className="descr">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                and
                 scrambled it to make a type specimen book.
               </p>
             </div>
@@ -124,18 +200,18 @@ const Product = () => {
                         return (
                           <div className="also-buy-slider__item" key={i}>
                             <img src={item.imgPath} alt="" className="image"/>
-                           <div className="wrap">
-                             <p className="title">{item.title}</p>
-                             <p className="descr">{item.descrShort}</p>
-                             <div className="price-block">
-                               <p className="price">Ціна: {item.price}грн</p>
-                               <Link href={`/product/${item.id}`} passHref>
-                                 <a>
-                                   <ButtonWithIcon icon="/icons/basket.svg" name="Купити" btnClass="btn__novelty"/>
-                                 </a>
-                               </Link>
-                             </div>
-                           </div>
+                            <div className="wrap">
+                              <p className="title">{item.title}</p>
+                              <p className="descr">{item.descrShort}</p>
+                              <div className="price-block">
+                                <p className="price">Ціна: {item.price}грн</p>
+                                <Link href="/product/[id]" as={`/product/${item.id}`} passHref replace>
+                                  <a>
+                                    <ButtonWithIcon icon="/icons/basket.svg" name="Купити" btnClass="btn__novelty"/>
+                                  </a>
+                                </Link>
+                              </div>
+                            </div>
                           </div>
                         )
                       })

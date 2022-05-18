@@ -7,9 +7,9 @@ export const Button = ({name, btnClass = ""}) => {
   );
 };
 
-export const ButtonWithIcon = ({name, icon, btnClass}) => {
+export const ButtonWithIcon = ({name, icon, btnClass, onHandleClick}) => {
   return (
-    <button className={"btnIcon " + btnClass}>
+    <button className={"btnIcon " + btnClass} onClick={onHandleClick}>
       <SVG src={icon}/>
       <span>{name}</span>
     </button>

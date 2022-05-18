@@ -3,13 +3,19 @@ import Input from "../UI/Input/Input";
 import {Button} from "../Button/Button";
 import MultiRangeSlider from "../MultiRangeSlider/MultiRangeSlider";
 
-const FilterPrice = () => {
+const FilterPrice = ({filtersHandler}) => {
   const [minValue, setMinValue] = useState(0)
   const [maxValue, setMaxValue] = useState(1000)
 
   const multiRangeSliderChange = (min, max) => {
     setMinValue(min)
     setMaxValue(max)
+
+    let price = {
+      from: min,
+      to: max
+    }
+    filtersHandler({price: price})
   }
   return (
     <div className="filter-price">

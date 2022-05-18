@@ -7,13 +7,6 @@ import reducers from './reducers';
 const bindMiddleware = (middleware) => {
     if (process.env.NODE_ENV !== 'production') {
         const { composeWithDevTools } = require('redux-devtools-extension')
-        middleware.push(
-          createLogger({
-              level: 'info',
-              collapsed: true,
-          }),
-        )
-
         return composeWithDevTools(applyMiddleware(...middleware))
     }
     return applyMiddleware(...middleware)
@@ -25,7 +18,7 @@ const reducer = (state, action) => {
             ...state, // use previous state
             ...action.payload, // apply delta from hydration
         };
-        // if (state.products) nextState.products = state.products
+        if (state.cart) nextState.cart = state.cart
         // if (state.products.product) nextState.products.product = state.products.product
 
         return nextState
