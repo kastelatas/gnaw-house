@@ -6,7 +6,7 @@ import FilterPrice from "../FilterPrice/FilterPrice";
 const LeftSideBar = ({filtersHandler}) => {
   return (
     <div className="left-sidebar">
-      <FilterList filters={filters}/>
+      <FilterList filters={filters} filtersHandler={filtersHandler}/>
       <FilterPrice filtersHandler={filtersHandler}/>
     </div>
   );

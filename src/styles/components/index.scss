@@ -22,5 +22,21 @@
 @import "./ui/radioButton";
 @import "./ui/form-input";
 @import "./ui/form-textarea";
+@import "./ui/form-select";
 
 @import "modals";
+
+.List {
+  border: 1px solid #d9dddd;
+}
+
+.ListItemEven,
+.ListItemOdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListItemEven {
+  background-color: #f8f8f0;
+}

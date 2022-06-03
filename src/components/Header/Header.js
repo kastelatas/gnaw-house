@@ -3,6 +3,7 @@ import SVG from 'react-inlinesvg'
 import Link from 'next/link'
 import {useDispatch, useSelector} from "react-redux";
 import {openModal} from "../../redux/actions/modals";
+import LazyLoad from "react-lazyload";
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -17,7 +18,9 @@ const Header = () => {
       <div className="container">
         <div className="row flex-ai-c flex-jc-sb">
           <Link href="/">
-            <img src="/img/logo.svg" className="logo"/>
+            <LazyLoad  once>
+              <img src="/img/logo.svg" className="logo" alt="logo"/>
+            </LazyLoad>
           </Link>
           <div className="nav">
             <ul className="menu">

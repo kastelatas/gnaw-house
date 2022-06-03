@@ -1,10 +1,10 @@
 import React from 'react';
 
-const FormTextArea = ({labelName, textareaID}) => {
+const FormTextArea = ({labelName, textareaID, value, valueChange}) => {
   return (
     <div className="form-textarea">
       <label htmlFor={textareaID}>{labelName}</label>
-      <textarea name="" id={textareaID} cols="76" rows="10"/>
+      <textarea defaultValue={value} onChange={valueChange} name="" id={textareaID} cols="76" rows="10"/>
     </div>
   );
 };

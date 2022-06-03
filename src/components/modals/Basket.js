@@ -51,7 +51,8 @@ const Basket = () => {
                           </div>
                           <div className="title-wrapper">
                             <div className="basket-product__title">{product.title}</div>
-                            <div className="basket-product__subtitle">{product.size}</div>
+                            <div className="basket-product__subtitle">Розмір: {product.size}</div>
+                            <div className="basket-product__subtitle">Колір: {product.color}</div>
                           </div>
                         </div>
                       </div>

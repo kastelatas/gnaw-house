@@ -33,15 +33,11 @@ const cartReducer = (state = initialState, action) => {
           newCart.push(product);
         }
       }
-
+      localStorage.setItem('cart', JSON.stringify(newCart))
       return {cart: newCart, count: newCount, price: newPrice}
 
     case types.cart.DELETE_FROM_CART:
       let productInCart = state.cart.find(product => product.productId === action.payload)
-      console.log(productInCart)
-      console.log(state.cart.filter(item => {
-        return item.productId !== productInCart.productId
-      }))
       let quantity_ = productInCart.count;
       return {
         ...state,

@@ -23,6 +23,18 @@
     }
   }
 
+  &__active {
+    background: #9D8B77;
+
+    .payment-method__text {
+      color: #ffffff;
+    }
+
+    svg, path {
+      fill: #CFF69B
+    }
+  }
+
   &__container {
     display: flex;
     align-items: center;

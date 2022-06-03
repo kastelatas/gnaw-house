@@ -10,7 +10,7 @@ const Product = ({product}) => {
         <p className="product__title">{product.title}</p>
         <p className="product__descr">{product.descrShort}</p>
         <div className="product__footer">
-          <p className="product__price">{product.price} грн</p>
+          <p className="product__price">{product.prices && product.prices[0].price} грн</p>
           <Link href={`/product/${product.id}`}>
             <a className="btn">Купити</a>
           </Link>

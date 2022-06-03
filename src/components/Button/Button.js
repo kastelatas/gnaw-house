@@ -1,9 +1,9 @@
 import React from 'react';
 import SVG from "react-inlinesvg";
 
-export const Button = ({name, btnClass = ""}) => {
+export const Button = ({name, btnClass = "", click}) => {
   return (
-    <button className={"btn " + btnClass}>{name}</button>
+    <button onClick={() => click} className={"btn " + btnClass}>{name}</button>
   );
 };
 

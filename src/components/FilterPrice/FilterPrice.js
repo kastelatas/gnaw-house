@@ -15,7 +15,7 @@ const FilterPrice = ({filtersHandler}) => {
       from: min,
       to: max
     }
-    filtersHandler({price: price})
+    // filtersHandler({price: price})
   }
   return (
     <div className="filter-price">

@@ -1,24 +1,20 @@
 export default [
     {
         id: 1,
-        imgPath: "/img/slider-item.png",
+        imgPath: "/img/Quadratic/Хмаринки_1.png",
         title: "Квадрат \"Хмаринки\"",
         descrShort: "Мʼякенькі та пухкенькі хмаринки, що подарують хвостатому улюбленцю справжній комфорт.",
-        descr: "Мʼякенькі та пухкенькі хмаринки, що подарують хвостатому улюбленцю справжній комфорт. За допомогою такої привабливої та м'якої домівки вдасться облаштувати неймовірно комфортну, теплу та затишну зону відпочинку, яка неодмінно стане улюбленим місцем гризуна.",
-        price: 325,
+        descr: "Мʼякенькі та пухкенькі хмаринки, що подарують хвостатому улюбленцю справжній комфорт. За допомогою такої привабливої " +
+          "та м'якої домівки вдасться облаштувати неймовірно комфортну, теплу та затишну зону відпочинку, яка неодмінно стане улюбленим місцем гризуна.",
         images: [
             {
                 id: 1,
-                path: "/img/slider-img1.jpg",
+                path: "/img/Quadratic/Хмаринки_1.png",
             },
             {
                 id: 2,
-                path: "/img/slider-img2.jpg",
+                path: "/img/Quadratic/Хмаринки_2.png",
             },
-            {
-                id: 3,
-                path: "/img/slider-img3.jpg",
-            }
         ],
         sizes: [
             {
@@ -28,43 +24,49 @@ export default [
             },
             {
                 id: 2,
-                name: 'M(13x13x13)',
+                name: 'M(25x25x25)',
                 checked: false
             },
             {
-                id: 31,
-                name: 'L(12x12x12)',
+                id: 3,
+                name: 'L(35x35x35)',
                 checked: false
             }
         ],
         colors: [
             {
                 id: 1,
-                color: 'Білий (чорний, блакитний)',
+                color: 'Білий (чорний, блакитний)111',
                 checked: true
+            }
+        ],
+        prices: [
+            {
+                id: 1,
+                price: 325
+            },
+            {
+                id: 2,
+                price: 375
+            },
+            {
+                id: 3,
+                price: 400
             }
         ]
     },
     {
         id: 2,
-        imgPath: "/img/slider-item.png",
+        imgPath: "/img/Wigwam/Хмаринки.png",
         title: "Вігвам \"Хмаринки\"",
-        descrShort: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        price: 325,
+        descrShort: "Небо — це перевернутий океан. А наш океан з наймʼякішого плюшу.\n",
+        descr: "Зручний вігвам трикутної форми для усіх гризунів. Дає змогу облаштувати для улюбленця затишне місце для сну або відпочинку, " +
+          "де йому буде комфортно та приємно знаходитись.",
         images: [
             {
                 id: 1,
-                path: "/img/slider-img1.jpg",
+                path: "/img/Wigwam/Хмаринки.png",
             },
-            {
-                id: 2,
-                path: "/img/slider-img2.jpg",
-            },
-            {
-                id: 3,
-                path: "/img/slider-img3.jpg",
-            }
         ],
         sizes: [
             {
@@ -74,12 +76,12 @@ export default [
             },
             {
                 id: 2,
-                name: 'S(13x13x13)',
+                name: 'M(25x25x25)',
                 checked: false
             },
             {
-                id: 31,
-                name: 'S(12x12x12)',
+                id: 3,
+                name: 'L(35x35x35)',
                 checked: false
             }
         ],
@@ -88,44 +90,51 @@ export default [
                 id: 1,
                 color: 'Білий (чорний, блакитний)',
                 checked: true
+            }
+        ],
+        prices: [
+            {
+                id: 1,
+                price: 325
+            },
+            {
+                id: 2,
+                price: 375
+            },
+            {
+                id: 3,
+                price: 400
             }
         ]
     },
     {
         id: 3,
-        imgPath: "/img/slider-item.png",
+        imgPath: "/img/Single-hammock/Хмаринки.png",
         title: "Гамак \"Хмаринки\"",
-        descrShort: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        descrShort: "Небо — це перевернутий океан. А наш океан з наймʼякішого плюшу.\n",
+        descr: "Зручний вігвам трикутної форми для усіх гризунів. Дає змогу облаштувати для улюбленця затишне місце для сну або відпочинку, " +
+          "де йому буде комфортно та приємно знаходитись.",
         price: 135,
         images: [
             {
                 id: 1,
-                path: "/img/slider-img1.jpg",
+                path: "/img/Single-hammock/Хмаринки.png",
             },
-            {
-                id: 2,
-                path: "/img/slider-img2.jpg",
-            },
-            {
-                id: 3,
-                path: "/img/slider-img3.jpg",
-            }
         ],
         sizes: [
             {
                 id: 1,
-                name: 'S(15x15x15)',
+                name: 'S(17x17)',
                 checked: true
             },
             {
                 id: 2,
-                name: 'S(13x13x13)',
+                name: 'M(25x25)',
                 checked: false
             },
             {
-                id: 31,
-                name: 'S(12x12x12)',
+                id: 3,
+                name: 'L(35x35)',
                 checked: false
             }
         ],
@@ -134,44 +143,51 @@ export default [
                 id: 1,
                 color: 'Білий (чорний, блакитний)',
                 checked: true
+            }
+        ],
+        prices: [
+            {
+                id: 1,
+                price: 135
+            },
+            {
+                id: 2,
+                price: 150
+            },
+            {
+                id: 3,
+                price: 175
             }
         ]
     },
     {
         id: 4,
-        imgPath: "/img/slider-item.png",
+        imgPath: "/img/Double-hammock/Хмаринки.png",
         title: "Гамак дворівневий \"Хмаринки\"",
-        descrShort: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        descr: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        descrShort: "Небо — це перевернутий океан. А наш океан з наймʼякішого плюшу.",
+        descr: "Зручний вігвам трикутної форми для усіх гризунів. Дає змогу облаштувати для улюбленця затишне місце для сну або відпочинку, " +
+          "де йому буде комфортно та приємно знаходитись.",
         price: 235,
         images: [
             {
                 id: 1,
-                path: "/img/slider-img1.jpg",
+                path: "/img/Double-hammock/Хмаринки.png",
             },
-            {
-                id: 2,
-                path: "/img/slider-img2.jpg",
-            },
-            {
-                id: 3,
-                path: "/img/slider-img3.jpg",
-            }
         ],
         sizes: [
             {
                 id: 1,
-                name: 'S(15x15x15)',
+                name: 'S(17x17)',
                 checked: true
             },
             {
                 id: 2,
-                name: 'S(13x13x13)',
+                name: 'M(25x25)',
                 checked: false
             },
             {
-                id: 31,
-                name: 'S(12x12x12)',
+                id: 3,
+                name: 'L(35x35)',
                 checked: false
             }
         ],
@@ -180,6 +196,20 @@ export default [
                 id: 1,
                 color: 'Білий (чорний, блакитний)',
                 checked: true
+            }
+        ],
+        prices: [
+            {
+                id: 1,
+                price: 135
+            },
+            {
+                id: 2,
+                price: 150
+            },
+            {
+                id: 3,
+                price: 175
             }
         ]
     },

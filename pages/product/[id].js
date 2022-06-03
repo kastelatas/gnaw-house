@@ -14,11 +14,6 @@ import Counter from "../../src/components/Counter/Counter";
 import {ButtonWithIcon} from "../../src/components/Button/Button";
 
 const Product = () => {
-  const sizePrice = {
-    'S(15x15x15)': 525,
-    'S(13x13x13)': 425,
-    'S(12x12x12)': 325,
-  }
 
   const router = useRouter()
 
@@ -26,7 +21,7 @@ const Product = () => {
   const {product, products} = useSelector(state => state.products)
 
   const [count, setCount] = useState(1)
-  const [size, setSize] = useState(product.sizes[0].name)
+  const [size, setSize] = useState(product.sizes[0])
   const [color, setColor] = useState(product.colors[0].color)
   const [productPrice, setProductPrice] = useState(0)
 
@@ -66,7 +61,7 @@ const Product = () => {
     let productCopy = {
       ...product,
       count: count,
-      size: size,
+      size: size.name,
       color: color,
       price: productPrice,
       productId: Date.now()
@@ -79,6 +74,7 @@ const Product = () => {
   }
 
   const sizeHandler = (size) => {
+    console.log('setSize', size)
     setSize(size)
   }
 
@@ -87,11 +83,11 @@ const Product = () => {
   }
 
   useEffect(() => {
-    setProductPrice(sizePrice[size])
+    console.log(product.prices[size.id - 1])
+    setProductPrice(product.prices[size.id - 1].price)
   }, [size])
 
   useEffect(() => {
-    console.log(1)
     setCount(1)
   }, [router])
 
@@ -116,11 +112,12 @@ const Product = () => {
                 <p className="title">Розміри:</p>
                 <div className="row">
                   {
-                    product.sizes.map((size, indx) => {
+                    product.sizes.map((size, inx) => {
                       return (
                         <RadioButton
-                          key={indx}
+                          key={inx}
                           id="product-size"
+                          size={size}
                           name={size.name}
                           labelName={size.name}
                           checked={size.checked}
@@ -135,10 +132,10 @@ const Product = () => {
                 <p className="title">Колір:</p>
                 <div className="row">
                   {
-                    product.colors.map((color, indx) => {
+                    product.colors.map((color, inx) => {
                       return (
                         <RadioButton
-                          key={indx}
+                          key={inx}
                           id="product-color"
                           name={color.color}
                           checked={color.checked}

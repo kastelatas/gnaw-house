@@ -1,3 +1,4 @@
+require('dotenv').config()
 const withPWA = require("next-pwa");
 const runtimeCaching = require('next-pwa/cache');
 
@@ -17,4 +18,9 @@ module.exports = nextConfig
 
 module.exports = {
   optimizeFonts: false,
+  env: {
+    API_HOST: process.env.API_HOST,
+    API_NP_URL: process.env.API_NP_URL,
+    API_NP_KEY: process.env.API_NP_KEY,
+  }
 }
