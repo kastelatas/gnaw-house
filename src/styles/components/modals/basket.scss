@@ -55,7 +55,14 @@
           position: relative;
           border-bottom: 1px solid #DEDEDE;
 
-          &__img {}
+          &__img {
+            width: 100%;
+            max-width: 110px;
+            img {
+              width:70%;
+              margin: 0 auto;
+            }
+          }
 
           .title-wrapper {
             margin-left: 10px;
@@ -68,6 +75,7 @@
             font-size: 16px;
             color: #000000;
             margin-bottom: 5px;
+            cursor: pointer;
           }
 
           &__subtitle {

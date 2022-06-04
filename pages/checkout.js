@@ -39,7 +39,7 @@ const Checkout = () => {
     }
   ])
   const [checkPaymentMethod, setCheckPaymentMethod] = useState(paymentMethods[0])
-  const [selectedCity, setSelectedCity] = useState({})
+  const [selectedCity, setSelectedCity] = useState({value: '', label: ''})
   const [selectedBranch, setSelectedBranch] = useState({})
   const [citySelect, setCitySelect] = useState([])
   const [branchSelect, setBranchSelect] = useState([])
@@ -222,6 +222,7 @@ const Checkout = () => {
                         id="long-value-select2"
                         instanceId="long-value-select"
                         cacheOptions
+                        isDisabled={!selectedCity.value.length}
                         clearable={true}
                         components={{CustomSelect}}
                         value={selectedBranch}
@@ -245,10 +246,10 @@ const Checkout = () => {
                       cart.map((product, index) => {
                         return (
                           <div className="checkout__basket-item" key={index}>
-                            <img className="checkout__basket-img" src="/img/slider-item.png" alt=""/>
-                            <div className="column">
-                              <p className="checkout__basket-item__title">Elf Pup Christmas Dog Costume</p>
-                              <div className="row flex-jc-sb">
+                            <img className="checkout__basket-img" src={product.imgPath} alt=""/>
+                            <div className="column w100">
+                              <p className="checkout__basket-item__title">{product.title}</p>
+                              <div className="row flex-jc-sb w100">
                                 <div className="counter">
                                   <div className="counter__content">
                                     <div className="counter__minus" onClick={() => minusNumber(index)}>-</div>

@@ -18,9 +18,7 @@ const Header = () => {
       <div className="container">
         <div className="row flex-ai-c flex-jc-sb">
           <Link href="/">
-            <LazyLoad  once>
-              <img src="/img/logo.svg" className="logo" alt="logo"/>
-            </LazyLoad>
+            <img src="/img/logo.svg" className="logo" alt="logo"/>
           </Link>
           <div className="nav">
             <ul className="menu">

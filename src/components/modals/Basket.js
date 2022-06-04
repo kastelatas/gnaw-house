@@ -47,10 +47,14 @@ const Basket = () => {
                       <div className="col-1">
                         <div className="row">
                           <div className="basket-product__img">
-                            <img src="/img/product-img-basket.jpg" alt=""/>
+                            <img src={product.imgPath} alt=""/>
                           </div>
                           <div className="title-wrapper">
-                            <div className="basket-product__title">{product.title}</div>
+                            <Link href={`/product/${product.id}`} passHref>
+                              <div className="basket-product__title">
+                                {product.title}
+                              </div>
+                            </Link>
                             <div className="basket-product__subtitle">Розмір: {product.size}</div>
                             <div className="basket-product__subtitle">Колір: {product.color}</div>
                           </div>
@@ -74,7 +78,9 @@ const Basket = () => {
                         <div className="basket-product__sum">{product.price * product.count} грн</div>
                       </div>
                       <div className="col-5">
-                        <div className="basket-product__delete" onClick={() => {deleteProduct(product.productId)}}>
+                        <div className="basket-product__delete" onClick={() => {
+                          deleteProduct(product.productId)
+                        }}>
                           <SVG src={'/icons/close-modal.svg'}/>
                         </div>
                       </div>
