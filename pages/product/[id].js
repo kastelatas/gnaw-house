@@ -98,8 +98,8 @@ const Product = () => {
   return (
     <MainLayout title={product.title}>
       <div className="product-page">
-        <div className="container">
-          <div className="row">
+        <div className="container-wrap">
+          <div className="row-flex">
             <div className="product-page__slider">
               {
                 product.images && <ProductSlider images={product.images}/>
@@ -110,7 +110,7 @@ const Product = () => {
               <div className="descr"><span>Опис: </span>{product.descr}</div>
               <div className="product-page__size">
                 <p className="title">Розміри:</p>
-                <div className="row">
+                <div className="row-flex">
                   {
                     product.sizes.map((size, inx) => {
                       return (
@@ -130,7 +130,7 @@ const Product = () => {
               </div>
               <div className="product-page__color">
                 <p className="title">Колір:</p>
-                <div className="row">
+                <div className="row-flex">
                   {
                     product.colors.map((color, inx) => {
                       return (
@@ -149,13 +149,13 @@ const Product = () => {
               </div>
               <div className="product-page__price">
                 <p className="title">Ціна:</p>
-                <div className="column">
+                <div className="column-flex">
                   <p className="old-price">{productPrice + 100} грн</p>
                   <p className="new-price">{productPrice} грн</p>
                 </div>
               </div>
               <div className="product-page__count">
-                <div className="row flex-ai-c">
+                <div className="row-flex flex-ai-c">
                   <p className="title">Кількість:</p>
                   <Counter countHandler={countHandler} count={count}/>
                   <ButtonWithIcon
@@ -166,7 +166,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row-flex">
             <div className="product-page__payment">
               <p className="title">Оплата:</p>
               <p className="descr">
@@ -186,7 +186,7 @@ const Product = () => {
               </p>
             </div>
           </div>
-          <div className="row">
+          <div className="row-flex">
             <div className="also-buy">
               <p className="title">Також купують:</p>
               <div className="also-buy__slider">

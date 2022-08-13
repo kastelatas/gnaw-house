@@ -44,7 +44,7 @@ const Novelty = () => {
 
   return (
     <div className="novelty">
-      <div className="container">
+      <div className="container-wrap">
         <h2 className="novelty__title h2-title">Новинки</h2>
         <Slider {...settings} className="novelty-slider">
           {

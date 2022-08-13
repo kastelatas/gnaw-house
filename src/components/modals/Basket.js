@@ -30,22 +30,22 @@ const Basket = () => {
     <Modal title={'Товари у кошику'}>
       <div className="basket-modal">
         <div className="basket-modal__content">
-          <div className="table">
-            <div className="table-header">
-              <div className="row">
+          <div className="basket-table">
+            <div className="basket-table-header">
+              <div className="row-flex">
                 <div className="title col-1">Товар</div>
                 <div className="title col-2">Ціна</div>
                 <div className="title col-3">Кількість</div>
                 <div className="title col-4">Сумма</div>
               </div>
             </div>
-            <div className="table-content">
+            <div className="basket-table-content">
               {
                 cart.map((product, indx) => {
                   return (
                     <div className="basket-product" key={indx}>
                       <div className="col-1">
-                        <div className="row">
+                        <div className="row-flex">
                           <div className="basket-product__img">
                             <img src={product.imgPath} alt=""/>
                           </div>
@@ -90,8 +90,8 @@ const Basket = () => {
               }
 
             </div>
-            <div className="table-footer">
-              <div className="row flex-jc-sb flex-ai-c">
+            <div className="basket-table-footer">
+              <div className="row-flex flex-jc-sb flex-ai-c">
                 <div
                   className="back-to-products"
                   onClick={() => dispatch(closeModal())}

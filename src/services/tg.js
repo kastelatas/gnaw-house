@@ -1,10 +1,6 @@
 import fs from 'fs'
 import Tgfancy from 'tgfancy'
 
-const uid = function(){
-  return Math.random().toString(4).slice(2)
-}
-
 export default function TG(cartInfo) {
   let token = "5407501065:AAEsYftcfk9WaGVO12JYG7JEF4dyYhVHgwc";
   let chat_id = "-656613030"

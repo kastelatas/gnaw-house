@@ -7,8 +7,8 @@ import SVG from "react-inlinesvg";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
-        <div className="row flex-jc-sb">
+      <div className="container-wrap">
+        <div className="row-flex flex-jc-sb">
           <div className="footer__col">
             <div className="title">Про компанію</div>
             <Link href="/">Про нас</Link>
@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
           <div className="footer__col">
             <div className="title ">Підпишіться на нашу розсилку</div>
-            <div className="row">
+            <div className="row-flex">
               <Input placeholder={"Ваш E-mail"}/>
               <Button name="Підписатись"/>
             </div>

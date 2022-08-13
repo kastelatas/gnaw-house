@@ -1,5 +1,6 @@
 import NextNProgress from "nextjs-progressbar";
 import {wrapper} from "../src/redux/store";
+
 import '../src/styles/index.scss'
 
 function MyApp({Component, pageProps}) {

@@ -13,7 +13,7 @@ const MultiRangeSlider = ({min, max, onChange}) => {
 
   return (
     <div className="multiRangeSlider">
-      <div className="multiRangeSlider__container">
+      <div className="multiRangeSlider__container-wrap">
         <input
           type="range"
           min={min}

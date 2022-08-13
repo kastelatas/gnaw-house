@@ -4,9 +4,9 @@ import Image from "next/image";
 const HomeAbout = () => {
   return (
     <div className="home-about">
-      <div className="container">
+      <div className="container-wrap">
         <h2 className="title h2-title">Про нас</h2>
-        <div className="row">
+        <div className="row-flex">
           <div className="home-about__content">
             <div className="home-about__block">
               <img src="./img/anna.png" alt=""/>

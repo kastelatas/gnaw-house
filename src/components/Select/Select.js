@@ -32,7 +32,7 @@ const Select = ({sortByPrice}) => {
   return (
     <div className="select">
       <div className="select__wrapper">
-        <div className="select__container">
+        <div className="select__container-wrap">
           <button
             type="button"
             aria-haspopup="listbox"

@@ -1,5 +1,4 @@
 import types from '../types'
-import {useStore} from "react-redux";
 
 const initialState = {
   cart: [],
@@ -37,7 +36,7 @@ const cartReducer = (state = initialState, action) => {
       return {cart: newCart, count: newCount, price: newPrice}
 
     case types.cart.DELETE_FROM_CART:
-      let productInCart = state.cart.find(product => product.productId === action.payload)
+      let productInCart = state.cart.find((product) => product.productId === action.payload)
       let quantity_ = productInCart.count;
       return {
         ...state,

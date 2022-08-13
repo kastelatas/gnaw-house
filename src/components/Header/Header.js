@@ -15,8 +15,8 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className="container">
-        <div className="row flex-ai-c flex-jc-sb">
+      <div className="container-wrap">
+        <div className="row-flex flex-ai-c flex-jc-sb">
           <Link href="/">
             <img src="/img/logo.svg" className="logo" alt="logo"/>
           </Link>

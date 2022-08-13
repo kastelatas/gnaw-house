@@ -11,7 +11,8 @@ import {useRouter} from "next/router";
 import CustomSelect from "../src/components/CustomSelect/CustomSelect";
 import Select from "react-select";
 import AsyncSelect from 'react-select/async'
-import Np from "../src/services/NP/np";
+import Np from "../src/services/np";
+import translitWords from "../src/services/translit";
 
 
 const Checkout = () => {
@@ -105,6 +106,8 @@ const Checkout = () => {
       setCitySelect(cityArr)
     }, {Limit: 100})
 
+    console.log(translitWords('Вишенька_1'))
+
   }, [])
 
 
@@ -150,7 +153,6 @@ const Checkout = () => {
     }
     let branchesArr = []
     Np.getWarehouses(branches => {
-      console.log('branches', branches)
       branches.data.map(branch => {
         return branchesArr.push({
           value: branch.Description,
@@ -167,11 +169,11 @@ const Checkout = () => {
     <>
       <MainLayout title="Оплата">
         <div className="checkout">
-          <div className="container">
-            <div className="row flex-jc-sb">
+          <div className="container-wrap">
+            <div className="row-flex flex-jc-sb">
               <div className="checkout__form">
                 <p className="checkout__form-title">Оплата</p>
-                <div className="row">
+                <div className="row-flex">
                   {
                     paymentMethods.map(paymentMethod => {
                       return <PaymentMethod
@@ -187,19 +189,19 @@ const Checkout = () => {
                 </div>
                 <p className="checkout__form-title">Інформація про доставку</p>
                 <form onSubmit={sendMessageHandle}>
-                  <div className="row">
+                  <div className="row-flex">
                     <FormInput value={name} valueChange={(e) => setName(e.target.value)} inputID="name"
                                labelName="Ім’я*"/>
                     <FormInput value={lastName} valueChange={(e) => setLastName(e.target.value)} inputID="lastname"
                                labelName="Прізвище*"/>
                   </div>
-                  <div className="row">
+                  <div className="row-flex">
                     <FormInput value={email} valueChange={(e) => setEmail(e.target.value)} inputID="email"
                                labelName="Електронна адреса*"/>
                     <FormInput value={phone} valueChange={(e) => setPhone(e.target.value)} inputID="phone"
                                labelName="Номер телефону*"/>
                   </div>
-                  <div className="row">
+                  <div className="row-flex">
                     <div className="form-select">
                       <label htmlFor="long-value-select">Місто</label>
                       <AsyncSelect
@@ -231,7 +233,7 @@ const Checkout = () => {
                       />
                     </div>
                   </div>
-                  <div className="row">
+                  <div className="row-flex">
 
                     <FormTextArea value={comment} valueChange={(e) => setComment(e.target.value)}
                                   labelName="Коментар до замовлення" textareaID="comment"/>
@@ -240,16 +242,16 @@ const Checkout = () => {
                 </form>
               </div>
               <div className="checkout__basket">
-                <div className="checkout__basket-container">
+                <div className="checkout__basket-container-wrap">
                   <div className="checkout__basket-item-list">
                     {
                       cart.map((product, index) => {
                         return (
                           <div className="checkout__basket-item" key={index}>
                             <img className="checkout__basket-img" src={product.imgPath} alt=""/>
-                            <div className="column w100">
+                            <div className="column-flex w100">
                               <p className="checkout__basket-item__title">{product.title}</p>
-                              <div className="row flex-jc-sb w100">
+                              <div className="row-flex flex-jc-sb w100">
                                 <div className="counter">
                                   <div className="counter__content">
                                     <div className="counter__minus" onClick={() => minusNumber(index)}>-</div>

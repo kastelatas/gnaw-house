@@ -10,7 +10,7 @@ const PaymentMethod = ({id, icon, method, isChecked, checkedPaymentMethod}) => {
 
   return (
     <div className={root} onClick={() => checkedPaymentMethod(id)}>
-      <div className="payment-method__container">
+      <div className="payment-method__container-wrap">
         <SVG src={icon}/>
         <p className="payment-method__text">{method}</p>
       </div>

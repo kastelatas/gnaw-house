@@ -5,7 +5,7 @@ const About = () => {
   return (
     <MainLayout title="Про нас">
       <div className="about">
-        <div className="container">
+        <div className="container-wrap">
           About
         </div>
       </div>

@@ -13,8 +13,8 @@ const Banner = () => {
           </Link>
         </div>
         <div className="right-side">
-          <img src="./img/home_top_img.svg"  className="banner__image"/>
-          <img src="./img/home_top_img-mob.svg" alt="" className="banner__image-mob"/>
+          <img src="./img/home_top_img.svg" className="banner__image" />
+          <img src="./img/home_top_img-mob.svg" alt="" className="banner__image-mob" />
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ const Goals = () => {
 
   return (
     <section className="goals">
-      <div className="container">
+      <div className="container-wrap">
         <h2 className="goals__title h2-title">
           Чому наші домівки топові?
         </h2>

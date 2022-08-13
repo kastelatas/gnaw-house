@@ -8,11 +8,9 @@ export default function handler(req, res) {
     console.log('Data written to file');
   });
 
-
-
-
   let productById = products.find(product => {
     return product.id === Number(req.query.id)
   })
-  res.status(200).json(productById)
+
+  res.status(200).json(productById);
 }

@@ -94,11 +94,11 @@ const Catalog = () => {
   return (
     <MainLayout title="Каталог">
       <div className="catalog">
-        <div className="container">
-          <div className="row">
+        <div className="container-wrap">
+          <div className="row-flex">
             <LeftSideBar filtersHandler={filtersHandler}/>
             <div className="catalog__wrapper">
-              <div className="row flex-ai-c">
+              <div className="row-flex flex-ai-c">
                 <ButtonWithIcon name="Фільтри" icon={"/icons/filter.svg"} btnClass="catalog__filter-btn"/>
                 <Sorting sortByPrice={sortByPrice}/>
               </div>

@@ -5,7 +5,7 @@ const Contacts = () => {
   return (
     <MainLayout title="Контакты">
       <div className="contacts">
-        <div className="container">
+        <div className="container-wrap">
           Contacts
         </div>
       </div>
